@@ -1,0 +1,25 @@
+import com.nikitamaslov.intouch.gradle.Plugins
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath Plugins.androidGradle
+        classpath Plugins.kotlinGradle
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
