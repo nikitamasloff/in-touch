@@ -3,3 +3,4 @@ import com.nikitamaslov.intouch.gradle.Modules
 include(Modules.app)
 include(Modules.core)
 include(Modules.di)
+include(Modules.repository)

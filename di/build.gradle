@@ -5,6 +5,7 @@ apply from: "$rootDir/android-library.gradle"
 
 dependencies {
     implementation project(Modules.core)
+    implementation project(Modules.repository)
 
     implementation Libs.Dagger.core
     implementation Libs.Dagger.androidSupport

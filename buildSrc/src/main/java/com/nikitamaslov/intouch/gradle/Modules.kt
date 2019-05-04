@@ -5,4 +5,5 @@ object Modules {
     val app = ":app"
     val core = ":core"
     val di = ":di"
+    val repository = ":repository"
 }

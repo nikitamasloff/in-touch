@@ -1,0 +1,7 @@
+import com.nikitamaslov.intouch.gradle.Modules
+
+apply from: "$rootDir/android-library.gradle"
+
+dependencies {
+    implementation project(Modules.core)
+}
