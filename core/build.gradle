@@ -11,4 +11,7 @@ dependencies {
 
     api Libs.Dagger.core
     api Libs.Dagger.androidSupport
+
+    api Libs.Lifecycle.extensions
+    api Libs.Lifecycle.commonJava8
 }

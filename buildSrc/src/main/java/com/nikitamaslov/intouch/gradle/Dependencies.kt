@@ -14,6 +14,13 @@ object Libs {
         val appCompat = "androidx.appcompat:appcompat:1.1.0-alpha04"
     }
 
+    object Lifecycle {
+
+        private const val version = "2.1.0-alpha04"
+        val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
+        val commonJava8 = "androidx.lifecycle:lifecycle-common-java8:$version"
+    }
+
     object Rx {
 
         val java = "io.reactivex.rxjava2:rxjava:2.2.8"
