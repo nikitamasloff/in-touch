@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">core</string>
+    <string name="app_name" translatable="false">core</string>
+
+    <string name="logo">inTouch</string>
 </resources>
