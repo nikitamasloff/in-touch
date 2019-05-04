@@ -1,0 +1,9 @@
+import com.nikitamaslov.intouch.gradle.Libs
+
+apply from: "$rootDir/android-library.gradle"
+
+dependencies {
+    api Libs.Rx.java
+    api Libs.Rx.kotlin
+    api Libs.Rx.android
+}

@@ -13,6 +13,13 @@ object Libs {
 
         val appCompat = "androidx.appcompat:appcompat:1.1.0-alpha04"
     }
+
+    object Rx {
+
+        val java = "io.reactivex.rxjava2:rxjava:2.2.8"
+        val kotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"
+        val android = "io.reactivex.rxjava2:rxandroid:2.1.1"
+    }
 }
 
 object Plugins {
