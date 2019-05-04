@@ -13,6 +13,36 @@ object Libs {
 
         val appCompat = "androidx.appcompat:appcompat:1.1.0-alpha04"
     }
+
+    object Lifecycle {
+
+        private const val version = "2.1.0-alpha04"
+        val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
+        val commonJava8 = "androidx.lifecycle:lifecycle-common-java8:$version"
+    }
+
+    object Navigation {
+
+        private const val version = "2.1.0-alpha02"
+        val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+        val ui = "androidx.navigation:navigation-ui-ktx:$version"
+    }
+
+    object Rx {
+
+        val java = "io.reactivex.rxjava2:rxjava:2.2.8"
+        val kotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"
+        val android = "io.reactivex.rxjava2:rxandroid:2.1.1"
+    }
+
+    object Dagger {
+
+        private const val version = "2.22.1"
+        val core = "com.google.dagger:dagger:$version"
+        val compiler = "com.google.dagger:dagger-compiler:$version"
+        val androidSupport = "com.google.dagger:dagger-android-support:$version"
+        val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
+    }
 }
 
 object Plugins {
@@ -26,4 +56,8 @@ object Plugins {
 
     val androidGradle = "com.android.tools.build:gradle:3.4.0"
     val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+
+    val navigationSafeArgsGradle =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha02"
+    val navigationSafeArgs = "androidx.navigation.safeargs.kotlin"
 }

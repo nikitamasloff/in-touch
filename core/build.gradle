@@ -1,0 +1,23 @@
+import com.nikitamaslov.intouch.gradle.Libs
+import com.nikitamaslov.intouch.gradle.Plugins
+
+apply from: "$rootDir/android-library.gradle"
+
+apply plugin: Plugins.navigationSafeArgs
+
+dependencies {
+    api Libs.Android.appCompat
+
+    api Libs.Rx.java
+    api Libs.Rx.kotlin
+    api Libs.Rx.android
+
+    api Libs.Dagger.core
+    api Libs.Dagger.androidSupport
+
+    api Libs.Lifecycle.extensions
+    api Libs.Lifecycle.commonJava8
+
+    api Libs.Navigation.fragment
+    api Libs.Navigation.ui
+}
