@@ -20,6 +20,15 @@ object Libs {
         val kotlin = "io.reactivex.rxjava2:rxkotlin:2.3.0"
         val android = "io.reactivex.rxjava2:rxandroid:2.1.1"
     }
+
+    object Dagger {
+
+        private const val version = "2.22.1"
+        val core = "com.google.dagger:dagger:$version"
+        val compiler = "com.google.dagger:dagger-compiler:$version"
+        val androidSupport = "com.google.dagger:dagger-android-support:$version"
+        val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
+    }
 }
 
 object Plugins {
