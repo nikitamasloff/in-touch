@@ -8,8 +8,15 @@ dependencies {
     implementation project(Modules.repository)
     implementation project(Modules.auth)
 
+    implementation project(Modules.splashdomain)
+    implementation project(Modules.splashpresentation)
+
+
     implementation Libs.Dagger.core
     implementation Libs.Dagger.androidSupport
     kapt Libs.Dagger.compiler
     kapt Libs.Dagger.androidProcessor
+
+    implementation Libs.Firebase.core
+    implementation Libs.Firebase.auth
 }
