@@ -43,6 +43,12 @@ object Libs {
         val androidSupport = "com.google.dagger:dagger-android-support:$version"
         val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
     }
+
+    object Firebase {
+
+        val core = "com.google.firebase:firebase-core:16.0.8"
+        val auth = "com.google.firebase:firebase-auth:16.2.1"
+    }
 }
 
 object Plugins {
@@ -60,4 +66,7 @@ object Plugins {
     val navigationSafeArgsGradle =
         "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha02"
     val navigationSafeArgs = "androidx.navigation.safeargs.kotlin"
+
+    val googleServicesGradle = "com.google.gms:google-services:4.0.1"
+    val googleServices = "com.google.gms.google-services"
 }

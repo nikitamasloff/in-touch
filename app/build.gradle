@@ -33,3 +33,5 @@ dependencies {
     implementation Libs.kotlin
     implementation Libs.Android.appCompat
 }
+
+apply plugin: Plugins.googleServices
