@@ -21,6 +21,13 @@ object Libs {
         val commonJava8 = "androidx.lifecycle:lifecycle-common-java8:$version"
     }
 
+    object Navigation {
+
+        private const val version = "2.1.0-alpha02"
+        val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+        val ui = "androidx.navigation:navigation-ui-ktx:$version"
+    }
+
     object Rx {
 
         val java = "io.reactivex.rxjava2:rxjava:2.2.8"
@@ -49,4 +56,8 @@ object Plugins {
 
     val androidGradle = "com.android.tools.build:gradle:3.4.0"
     val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+
+    val navigationSafeArgsGradle =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha02"
+    val navigationSafeArgs = "androidx.navigation.safeargs.kotlin"
 }
