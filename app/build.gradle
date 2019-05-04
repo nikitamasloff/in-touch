@@ -1,5 +1,6 @@
 import com.nikitamaslov.intouch.gradle.Application
 import com.nikitamaslov.intouch.gradle.Libs
+import com.nikitamaslov.intouch.gradle.Modules
 import com.nikitamaslov.intouch.gradle.Plugins
 
 apply plugin: Plugins.androidApplication
@@ -29,9 +30,17 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.di)
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libs.kotlin
     implementation Libs.Android.appCompat
+
+    implementation Libs.Dagger.core
+    implementation Libs.Dagger.androidSupport
+    kapt Libs.Dagger.compiler
+    kapt Libs.Dagger.androidProcessor
 }
 
 apply plugin: Plugins.googleServices
