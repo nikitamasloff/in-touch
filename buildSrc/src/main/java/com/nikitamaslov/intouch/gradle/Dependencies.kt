@@ -12,6 +12,7 @@ object Libs {
     object Android {
 
         val appCompat = "androidx.appcompat:appcompat:1.1.0-alpha04"
+        val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     }
 
     object Lifecycle {

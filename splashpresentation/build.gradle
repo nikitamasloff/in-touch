@@ -1,0 +1,17 @@
+import com.nikitamaslov.intouch.gradle.Libs
+import com.nikitamaslov.intouch.gradle.Modules
+
+apply from: "$rootDir/android-library.gradle"
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.splashdomain)
+
+    implementation Libs.Android.constraintLayout
+}
