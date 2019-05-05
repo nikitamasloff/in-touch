@@ -1,0 +1,12 @@
+import com.nikitamaslov.intouch.gradle.Libs
+import com.nikitamaslov.intouch.gradle.Modules
+
+apply from: "$rootDir/android-library.gradle"
+
+dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.repository)
+
+    implementation Libs.Firebase.core
+    implementation Libs.Firebase.firestore
+}

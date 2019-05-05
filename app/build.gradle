@@ -37,6 +37,7 @@ dependencies {
     implementation project(Modules.di)
     implementation project(Modules.repository)
     implementation project(Modules.auth)
+    implementation project(Modules.database)
 
     implementation project(Modules.splashdomain)
     implementation project(Modules.splashpresentation)
@@ -52,6 +53,7 @@ dependencies {
 
     implementation Libs.Firebase.core
     implementation Libs.Firebase.auth
+    implementation Libs.Firebase.firestore
 }
 
 apply plugin: Plugins.googleServices

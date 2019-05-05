@@ -5,6 +5,7 @@ include(Modules.core)
 include(Modules.di)
 include(Modules.repository)
 include(Modules.auth)
+include(Modules.database)
 
 include(Modules.splashdomain)
 include(Modules.splashpresentation)
