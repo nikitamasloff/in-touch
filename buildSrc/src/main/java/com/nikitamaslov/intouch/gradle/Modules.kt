@@ -13,4 +13,5 @@ object Modules {
     val splashpresentation = ":splashpresentation"
 
     val logindomain = ":logindomain"
+    val loginpresentation = ":loginpresentation"
 }

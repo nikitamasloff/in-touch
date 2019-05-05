@@ -1,0 +1,36 @@
+package com.nikitamaslov.di.module.database
+
+<<<<<<< HEAD
+import dagger.Module
+
+@Module
+abstract class DatabaseModule
+=======
+import com.google.firebase.firestore.FirebaseFirestore
+import com.nikitamaslov.core.network.NetworkManager
+import com.nikitamaslov.core.rx.schedulers.RxSchedulerProvider
+import com.nikitamaslov.database.users.UserDatabaseImpl
+import com.nikitamaslov.repository.database.users.UserDatabase
+import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
+
+@Module
+class DatabaseModule {
+
+    @Provides
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
+    }
+
+    @Singleton
+    @Provides
+    fun provideUserDatabase(
+        firestore: FirebaseFirestore,
+        schedulers: RxSchedulerProvider,
+        networkManager: NetworkManager
+    ): UserDatabase {
+        return UserDatabaseImpl(firestore, schedulers, networkManager)
+    }
+}
+>>>>>>> b1ea42f... Integrate login in dependency injection graph
