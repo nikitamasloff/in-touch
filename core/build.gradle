@@ -5,6 +5,12 @@ apply from: "$rootDir/android-library.gradle"
 
 apply plugin: Plugins.navigationSafeArgs
 
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
 dependencies {
     api Libs.Android.appCompat
 
