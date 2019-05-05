@@ -7,4 +7,7 @@ object Modules {
     val di = ":di"
     val repository = ":repository"
     val auth = ":auth"
+
+    val splashdomain = ":splashdomain"
+    val splashpresentation = ":splashpresentation"
 }

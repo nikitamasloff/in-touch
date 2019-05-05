@@ -27,11 +27,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation project(Modules.core)
     implementation project(Modules.di)
+    implementation project(Modules.repository)
+    implementation project(Modules.auth)
+
+    implementation project(Modules.splashdomain)
+    implementation project(Modules.splashpresentation)
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libs.kotlin
@@ -41,6 +49,9 @@ dependencies {
     implementation Libs.Dagger.androidSupport
     kapt Libs.Dagger.compiler
     kapt Libs.Dagger.androidProcessor
+
+    implementation Libs.Firebase.core
+    implementation Libs.Firebase.auth
 }
 
 apply plugin: Plugins.googleServices
