@@ -9,3 +9,6 @@ include(Modules.database)
 
 include(Modules.splashdomain)
 include(Modules.splashpresentation)
+
+include(Modules.logindomain)
+include(Modules.loginpresentation)

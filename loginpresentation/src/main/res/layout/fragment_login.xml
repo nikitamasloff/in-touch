@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.nikitamaslov.loginpresentation.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6">
+
+            <EditText
+                style="@style/EditText"
+                android:layout_gravity="center"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:text="@={viewmodel.email}" />
+
+            <EditText
+                style="@style/EditText"
+                android:layout_gravity="center"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:text="@={viewmodel.password}" />
+
+            <ProgressBar
+                style="@style/ProgressBar"
+                android:layout_gravity="center"
+                android:visibility="@{viewmodel.loading ? View.VISIBLE : View.INVISIBLE}" />
+
+            <TextView
+                style="@style/Status"
+                android:layout_gravity="center"
+                android:visibility="@{viewmodel.loading ? View.INVISIBLE : View.VISIBLE}"
+                app:stringResId="@{viewmodel.status}" />
+
+            <Button
+                style="@style/PrimaryButton"
+                android:layout_gravity="center"
+                android:onClick="@{() -> viewmodel.logIn()}"
+                android:text="@string/action_log_in" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    style="@style/SecondaryButton"
+                    android:layout_gravity="center"
+                    android:onClick="@{() -> viewmodel.navigateToRegister()}"
+                    android:text="@string/action_register"
+                    android:textSize="@dimen/font_small" />
+
+                <View
+                    style="@style/VerticalSeparator"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    style="@style/SecondaryButton"
+                    android:layout_gravity="center"
+                    android:onClick="@{() -> viewmodel.navigateToRestore()}"
+                    android:text="@string/action_restore"
+                    android:textSize="@dimen/font_small" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -12,6 +12,8 @@ dependencies {
     implementation project(Modules.splashdomain)
     implementation project(Modules.splashpresentation)
 
+    implementation project(Modules.logindomain)
+    implementation project(Modules.loginpresentation)
 
     implementation Libs.Dagger.core
     implementation Libs.Dagger.androidSupport

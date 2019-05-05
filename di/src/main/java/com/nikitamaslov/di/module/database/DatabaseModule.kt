@@ -1,6 +1,29 @@
 package com.nikitamaslov.di.module.database
 
+import com.google.firebase.firestore.FirebaseFirestore
+import com.nikitamaslov.core.network.NetworkManager
+import com.nikitamaslov.core.rx.schedulers.RxSchedulerProvider
+import com.nikitamaslov.database.users.UserDatabaseImpl
+import com.nikitamaslov.repository.database.users.UserDatabase
 import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
 @Module
-abstract class DatabaseModule
+class DatabaseModule {
+
+    @Provides
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
+    }
+
+    @Singleton
+    @Provides
+    fun provideUserDatabase(
+        firestore: FirebaseFirestore,
+        schedulers: RxSchedulerProvider,
+        networkManager: NetworkManager
+    ): UserDatabase {
+        return UserDatabaseImpl(firestore, schedulers, networkManager)
+    }
+}

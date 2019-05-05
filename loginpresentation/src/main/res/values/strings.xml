@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="app_name">loginpresentation</string>
+
+    <!--success-->
+    <string name="success_message_register">Registration successful</string>
+    <string name="success_message_restore">Email has been sent</string>
+
+
+    <!--system error-->
+    <string name="error_message_no_internet_connection">No internet connection</string>
+    <string name="error_message_server_unavailable">Server unavailable</string>
+
+    <!--login error-->
+    <string name="error_message_wrong_email">Wrong email</string>
+    <string name="error_message_wrong_password">Wrong password</string>
+
+    <!--registration error-->
+    <string name="error_message_invalid_user_data">Invalid first/last name</string>
+    <string name="error_message_invalid_email">Invalid email</string>
+    <string name="error_message_invalid_password">Invalid password</string>
+    <string name="error_message_user_already_exists">User already exists</string>
+
+    <!--recovery error-->
+    <string name="error_message_no_such_email">No such email</string>
+
+
+    <!--hint-->
+    <string name="hint_email">email</string>
+    <string name="hint_password">password</string>
+    <string name="hint_first_name">first name</string>
+    <string name="hint_last_name">last name</string>
+    <string name="hint_recovery_email">recovery email</string>
+
+
+    <!--action-->
+    <string name="action_log_in">log in</string>
+    <string name="action_register">register</string>
+    <string name="action_restore">restore</string>
+</resources>

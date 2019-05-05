@@ -2,8 +2,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/graph_login"
-    app:startDestination="@id/placeholder">
+    app:startDestination="@id/fragment_login">
 
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.nikitamaslov.loginpresentation.fragment.LoginFragment">
 
-    <fragment android:id="@+id/placeholder" />
+        <action
+            android:id="@+id/to_fragment_register"
+            app:destination="@id/fragment_register" />
+        <action
+            android:id="@+id/to_fragment_restore"
+            app:destination="@id/fragment_restore" />
+        <action
+            android:id="@+id/to_graph_main"
+            app:destination="@id/graph_main"
+            app:popUpTo="@+id/graph_login"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.nikitamaslov.loginpresentation.fragment.RegisterFragment" />
+
+    <fragment
+        android:id="@+id/fragment_restore"
+        android:name="com.nikitamaslov.loginpresentation.fragment.RestoreFragment" />
+
+    <include app:graph="@navigation/graph_main" />
 </navigation>
