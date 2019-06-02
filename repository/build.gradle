@@ -6,4 +6,5 @@ dependencies {
     implementation project(Modules.core)
     implementation project(Modules.splashdomain)
     implementation project(Modules.logindomain)
+    implementation project(Modules.profiledomain)
 }

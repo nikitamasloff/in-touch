@@ -1,15 +1,20 @@
 package com.nikitamaslov.repository.database.users.mapper
 
-import com.nikitamaslov.logindomain.exception.RegisterException
-import com.nikitamaslov.logindomain.exception.SystemException
 import com.nikitamaslov.repository.database.exception.DatabaseNetworkConnectionException
 import com.nikitamaslov.repository.database.exception.DatabaseServerException
-import com.nikitamaslov.repository.database.users.exception.DatabaseUserCreatorException
+import com.nikitamaslov.logindomain.exception.SystemException as LoginSystemException
+import com.nikitamaslov.profiledomain.exception.SystemException as ProfileSystemException
 
-internal fun mapDatabaseUserToRegisterException(t: Throwable): Throwable =
+internal fun mapDatabaseToLoginSystemException(t: Throwable): Throwable =
     when (t) {
-        is DatabaseUserCreatorException -> RegisterException.invalidUserData()
-        is DatabaseNetworkConnectionException -> SystemException.networkConnection()
-        is DatabaseServerException -> SystemException.server()
+        is DatabaseNetworkConnectionException -> LoginSystemException.networkConnection()
+        is DatabaseServerException -> LoginSystemException.server()
+        else -> t
+    }
+
+internal fun mapDatabaseToProfileSystemException(t: Throwable): Throwable =
+    when (t) {
+        is DatabaseNetworkConnectionException -> ProfileSystemException.networkConnection()
+        is DatabaseServerException -> ProfileSystemException.server()
         else -> t
     }
