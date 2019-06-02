@@ -47,8 +47,8 @@ object Libs {
 
     object Firebase {
 
-        val core = "com.google.firebase:firebase-core:16.0.8"
-        val auth = "com.google.firebase:firebase-auth:16.2.1"
+        val core = "com.google.firebase:firebase-core:16.0.9"
+        val auth = "com.google.firebase:firebase-auth:17.0.0"
         val firestore = "com.google.firebase:firebase-firestore-ktx:18.2.0"
     }
 }
