@@ -1,0 +1,23 @@
+import com.nikitamaslov.intouch.gradle.Libs
+import com.nikitamaslov.intouch.gradle.Modules
+
+apply from: "$rootDir/android-library.gradle"
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.profiledomain)
+
+    implementation Libs.Android.constraintLayout
+    implementation Libs.Android.recyclerView
+    implementation Libs.Android.progressDialog
+    implementation Libs.Android.materialPreferences
+    implementation Libs.Android.materialTextField
+    implementation Libs.Android.materialDialog
+    implementation Libs.Android.smartTabLayout
+}

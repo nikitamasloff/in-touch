@@ -2,8 +2,70 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/graph_main"
-    app:startDestination="@id/placeholder">
+    app:startDestination="@id/fragment_my_profile">
 
+    <fragment
+        android:id="@+id/fragment_my_profile"
+        android:name="com.nikitamaslov.profilepresentation.fragment.MyProfileFragment">
+        <action
+            android:id="@+id/to_profile_edit"
+            app:destination="@id/fragment_profile_edit" />
+    </fragment>
 
-    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/fragment_other_profile"
+        android:name="com.nikitamaslov.profilepresentation.fragment.OtherProfileFragment">
+        <argument
+            android:name="profile_id"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_profile_edit"
+        android:name="com.nikitamaslov.profilepresentation.fragment.ProfileEditFragment" />
+
+    <fragment
+        android:id="@+id/fragment_profile_relations"
+        android:name="com.nikitamaslov.profilepresentation.fragment.ProfileRelationsFragment">
+        <action
+            android:id="@+id/to_other_profile"
+            app:destination="@id/fragment_other_profile" />
+        <argument
+            android:name="profile_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/to_my_profile"
+            app:destination="@id/fragment_my_profile" />
+        <argument
+            android:name="mode"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_profile_search"
+        android:name="com.nikitamaslov.profilepresentation.fragment.ProfileSearchFragment">
+        <action
+            android:id="@+id/to_my_profile"
+            app:destination="@id/fragment_my_profile" />
+        <action
+            android:id="@+id/to_other_profile"
+            app:destination="@id/fragment_other_profile" />
+    </fragment>
+
+    <action
+        android:id="@+id/to_profile_search"
+        app:destination="@id/fragment_profile_search"
+        app:popUpTo="@+id/graph_main" />
+    <action
+        android:id="@+id/to_my_profile"
+        app:destination="@id/fragment_my_profile"
+        app:popUpTo="@+id/graph_main" />
+    <action
+        android:id="@+id/to_profile_relations"
+        app:destination="@id/fragment_profile_relations" />
+    <action
+        android:id="@+id/log_out"
+        app:destination="@id/graph_login"
+        app:popUpTo="@id/graph_main"
+        app:popUpToInclusive="true" />
 </navigation>

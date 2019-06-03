@@ -13,6 +13,13 @@ object Libs {
 
         val appCompat = "androidx.appcompat:appcompat:1.1.0-alpha04"
         val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+        val recyclerView = "androidx.recyclerview:recyclerview:1.1.0-alpha06"
+
+        val progressDialog = "com.kaopiz:kprogresshud:1.0.2"
+        val materialPreferences = "com.yarolegovich:mp:1.0.9"
+        val materialTextField = "com.github.florent37:materialtextfield:1.0.7"
+        val materialDialog = "com.afollestad.material-dialogs:core:3.0.0-rc1"
+        val smartTabLayout = "com.ogaclejapan.smarttablayout:library:2.0.0@aar"
     }
 
     object Lifecycle {
