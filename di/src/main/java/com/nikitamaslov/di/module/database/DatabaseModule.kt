@@ -2,7 +2,6 @@ package com.nikitamaslov.di.module.database
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.nikitamaslov.core.network.NetworkManager
-import com.nikitamaslov.core.rx.schedulers.RxSchedulerProvider
 import com.nikitamaslov.database.users.UserDatabaseImpl
 import com.nikitamaslov.repository.database.users.UserDatabase
 import dagger.Module
@@ -21,9 +20,8 @@ class DatabaseModule {
     @Provides
     fun provideUserDatabase(
         firestore: FirebaseFirestore,
-        schedulers: RxSchedulerProvider,
         networkManager: NetworkManager
     ): UserDatabase {
-        return UserDatabaseImpl(firestore, schedulers, networkManager)
+        return UserDatabaseImpl(firestore, networkManager)
     }
 }
