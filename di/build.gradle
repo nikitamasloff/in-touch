@@ -15,6 +15,9 @@ dependencies {
     implementation project(Modules.logindomain)
     implementation project(Modules.loginpresentation)
 
+    implementation project(Modules.profiledomain)
+    implementation project(Modules.profilepresentation)
+
     implementation Libs.Dagger.core
     implementation Libs.Dagger.androidSupport
     kapt Libs.Dagger.compiler

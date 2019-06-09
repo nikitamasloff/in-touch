@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.nikitamaslov.profilepresentation.viewmodel.ProfileEditViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewmodel.isInitializing ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone">
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/blue_grey_400" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewmodel.hasFatalError ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:stringResId="@{viewmodel.fatalErrorResId}"
+                    tools:text="Fatal error description" />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/blue_grey_400"
+                    android:onClick="@{() -> viewmodel.tryToFixFatalError()}"
+                    android:text="@string/action_retry"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewmodel.hasBeenInitialized ? View.VISIBLE : View.GONE}"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/menu_home"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_home_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/menu_search"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_search_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.yarolegovich.mp.MaterialPreferenceScreen
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.yarolegovich.mp.MaterialPreferenceCategory
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:mpc_title="@string/hint_personal_info">
+
+                        <com.yarolegovich.mp.MaterialRightIconPreference
+                            android:id="@+id/mp_initials"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mp_icon="@drawable/ic_initials_black_24dp"
+                            app:mp_icon_tint="@color/black"
+                            app:mp_title="@string/action_change_initials" />
+
+                        <com.yarolegovich.mp.MaterialRightIconPreference
+                            android:id="@+id/mp_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mp_icon="@drawable/ic_description_black_24dp"
+                            app:mp_icon_tint="@color/black"
+                            app:mp_title="@string/action_change_description" />
+
+                    </com.yarolegovich.mp.MaterialPreferenceCategory>
+
+                    <com.yarolegovich.mp.MaterialPreferenceCategory
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:mpc_title="@string/hint_security_info">
+
+                        <com.yarolegovich.mp.MaterialRightIconPreference
+                            android:id="@+id/mp_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mp_icon="@drawable/ic_email_black_24dp"
+                            app:mp_icon_tint="@color/black"
+                            app:mp_title="@string/action_change_email" />
+
+                        <com.yarolegovich.mp.MaterialRightIconPreference
+                            android:id="@+id/mp_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:mp_icon="@drawable/ic_password_black_24dp"
+                            app:mp_icon_tint="@color/black"
+                            app:mp_title="@string/action_change_password" />
+
+                    </com.yarolegovich.mp.MaterialPreferenceCategory>
+
+                </com.yarolegovich.mp.MaterialPreferenceScreen>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+</layout>

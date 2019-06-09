@@ -1,16 +1,23 @@
 package com.nikitamaslov.repository.auth.mapper
 
-import com.nikitamaslov.logindomain.model.Credential
 import com.nikitamaslov.repository.auth.model.AuthCredential
+import com.nikitamaslov.logindomain.model.Credential as LoginCredential
+import com.nikitamaslov.profiledomain.model.Credential as ProfileCredential
 
-internal fun Credential.Token.mapToAuthCredentialToken() =
+internal fun LoginCredential.Token.mapToAuthCredentialToken() =
     AuthCredential.Token(email)
 
-internal fun Credential.Key.mapToAuthCredentialKey() =
+internal fun LoginCredential.Key.mapToAuthCredentialKey() =
     AuthCredential.Key(password)
 
-internal fun Credential.mapToAuthCredential() =
+internal fun LoginCredential.mapToAuthCredential() =
     AuthCredential(
         token = token.mapToAuthCredentialToken(),
         key = key.mapToAuthCredentialKey()
     )
+
+internal fun ProfileCredential.Token.mapToAuthCredentialToken() =
+    AuthCredential.Token(email)
+
+internal fun ProfileCredential.Key.mapToAuthCredentialKey() =
+    AuthCredential.Key(password)
