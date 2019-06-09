@@ -14,11 +14,13 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="match_parent">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:visibility="@{viewmodel.isInitializing ? View.VISIBLE : View.GONE}"
             tools:visibility="gone">
 
@@ -35,6 +37,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:visibility="@{viewmodel.hasFatalError ? View.VISIBLE : View.GONE}"
             tools:visibility="gone">
 
@@ -71,6 +74,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:visibility="@{viewmodel.hasBeenInitialized ? View.VISIBLE : View.GONE}"
             tools:visibility="visible">
 

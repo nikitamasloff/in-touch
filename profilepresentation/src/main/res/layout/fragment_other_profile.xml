@@ -14,12 +14,15 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="@{viewmodel.isInitializing ? View.VISIBLE : View.GONE}">
+            android:background="@color/white"
+            android:visibility="@{viewmodel.isInitializing ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone">
 
             <ProgressBar
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -34,6 +37,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:visibility="@{viewmodel.hasFatalError ? View.VISIBLE : View.GONE}"
             tools:visibility="gone">
 
@@ -70,8 +74,9 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:visibility="@{viewmodel.hasBeenInitialized ? View.VISIBLE : View.GONE}"
-            tools:visibility="gone">
+            tools:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -119,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:text='@{viewmodel.firstName}'
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="Firstname" />
@@ -128,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
                         android:text='@{viewmodel.lastName}'
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         tools:text="Lastname" />
@@ -143,6 +150,7 @@
                     android:layout_marginEnd="16dp"
                     android:gravity="center"
                     android:text='@{viewmodel.description}'
+                    android:textColor="@color/grey_500"
                     tools:text="Some description about profile\nsome description" />
 
                 <Button
@@ -168,6 +176,7 @@
                     android:layout_marginTop="8dp"
                     android:gravity="start|center_vertical"
                     android:text="@string/relations_following_you"
+                    android:textColor="@color/grey_500"
                     android:visibility="@{viewmodel.isFollower ? View.VISIBLE : View.GONE}"
                     tools:text="Following you" />
 

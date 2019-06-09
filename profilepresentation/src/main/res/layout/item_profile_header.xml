@@ -14,26 +14,35 @@
             type="com.nikitamaslov.profilepresentation.adapter.OnProfileSelectListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:onClick="@{() -> listener.onSelect(profile)}"
-        android:padding="4dp">
+        android:background="@color/white">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
             android:onClick="@{() -> listener.onSelect(profile)}"
-            android:text='@{profile.initials.firstName + " " + profile.initials.lastName}'
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Firstname Lastname" />
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="4dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:onClick="@{() -> listener.onSelect(profile)}"
+                android:text='@{@string/template_initials(profile.initials.firstName, profile.initials.lastName)}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Firstname Lastname" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 </layout>
