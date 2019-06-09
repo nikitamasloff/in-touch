@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:mtf_image="@drawable/ic_description_black_24dp"
-        app:mtf_labelColor="@color/grey_500">
+        app:mtf_labelColor="@color/white">
 
         <EditText
             android:id="@+id/et_description"
