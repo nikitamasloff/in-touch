@@ -17,4 +17,6 @@ object Modules {
 
     val profiledomain = ":profiledomain"
     val profilepresentation = ":profilepresentation"
+
+    val mainpresentation = ":mainpresentation"
 }

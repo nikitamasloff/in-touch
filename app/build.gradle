@@ -48,6 +48,8 @@ dependencies {
     implementation project(Modules.profiledomain)
     implementation project(Modules.profilepresentation)
 
+    implementation project(Modules.mainpresentation)
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libs.kotlin
     implementation Libs.Android.appCompat

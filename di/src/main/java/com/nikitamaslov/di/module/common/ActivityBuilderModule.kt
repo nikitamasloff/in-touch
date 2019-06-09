@@ -1,6 +1,7 @@
 package com.nikitamaslov.di.module.common
 
 import com.nikitamaslov.loginpresentation.activity.LoginActivity
+import com.nikitamaslov.mainpresentation.MainActivity
 import com.nikitamaslov.splashpresentation.activity.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -13,4 +14,7 @@ abstract class ActivityBuilderModule {
 
     @ContributesAndroidInjector
     abstract fun contributeLoginActivity(): LoginActivity
+
+    @ContributesAndroidInjector
+    abstract fun contributeMainActivity(): MainActivity
 }

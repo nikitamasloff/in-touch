@@ -15,3 +15,5 @@ include(Modules.loginpresentation)
 
 include(Modules.profiledomain)
 include(Modules.profilepresentation)
+
+include(Modules.mainpresentation)

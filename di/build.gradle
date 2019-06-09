@@ -18,6 +18,8 @@ dependencies {
     implementation project(Modules.profiledomain)
     implementation project(Modules.profilepresentation)
 
+    implementation project(Modules.mainpresentation)
+
     implementation Libs.Dagger.core
     implementation Libs.Dagger.androidSupport
     kapt Libs.Dagger.compiler
