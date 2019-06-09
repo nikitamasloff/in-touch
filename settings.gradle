@@ -17,3 +17,5 @@ include(Modules.profiledomain)
 include(Modules.profilepresentation)
 
 include(Modules.mainpresentation)
+
+include(Modules.postdomain)
